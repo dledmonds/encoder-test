@@ -2,13 +2,13 @@
 Testing the encoding functionality of various security related encoders.
 
 ## Quick Start
-If you just want to jump to the interesting bit, head to the `output` folder
-* `All_HTML_Encoder_Test.html` - compares the most popular HTML encoders side by side
-* `Apache_StringEscapeUtils_escapeHtml3_All_Versions_Test.html` - compares all versions of StringEscapeUtils escapeHtml3 method
-* `OWASP_ESAPI_legacy_encodeForHTML_All_Versions_Test.html` - compares all versions of ESAPI java legacy encodeForHTML method
-* `OWASP_Java-Encoder_forHtmlAttribute_All_Versions_Test.html` - compares all versions of OWASP java-encoder forHtmlAttribute method
-* `OWASP_Java-Encoder_forHtmlContent_All_Versions_Test.html` - compares all versions of OWASP java-encoder forHtmlContent method
-* `OWASP_Java-Encoder_forHtml_All_Versions_Test.html` - compares all versions of OWASP java-encoder forHtml method
+If you just want to jump to the interesting bit, here's what's in the `output` folder
+* [All_HTML_Encoder_Test.html](http://htmlpreview.github.io/?https://github.com/dledmonds/encoder-test/blob/master/output/All_HTML_Encoder_Test.html) - compares the most popular HTML encoders side by side
+* [Apache_StringEscapeUtils_escapeHtml3_All_Versions_Test.html](http://htmlpreview.github.io/?https://github.com/dledmonds/encoder-test/blob/master/output/Apache_StringEscapeUtils_escapeHtml3_All_Versions_Test.html) - compares all versions of StringEscapeUtils escapeHtml3 method
+* [OWASP_ESAPI_legacy_encodeForHTML_All_Versions_Test.html](http://htmlpreview.github.io/?https://github.com/dledmonds/encoder-test/blob/master/output/OWASP_ESAPI_legacy_encodeForHTML_All_Versions_Test.html) - compares all versions of ESAPI java legacy encodeForHTML method
+* [OWASP_Java-Encoder_forHtmlAttribute_All_Versions_Test.html](http://htmlpreview.github.io/?https://github.com/dledmonds/encoder-test/blob/master/output/OWASP_Java-Encoder_forHtmlAttribute_All_Versions_Test.html) - compares all versions of OWASP java-encoder forHtmlAttribute method
+* [OWASP_Java-Encoder_forHtmlContent_All_Versions_Test.html](http://htmlpreview.github.io/?https://github.com/dledmonds/encoder-test/blob/master/output/OWASP_Java-Encoder_forHtmlContent_All_Versions_Test.html) - compares all versions of OWASP java-encoder forHtmlContent method
+* [OWASP_Java-Encoder_forHtml_All_Versions_Test.html](http://htmlpreview.github.io/?https://github.com/dledmonds/encoder-test/blob/master/output/OWASP_Java-Encoder_forHtml_All_Versions_Test.html) - compares all versions of OWASP java-encoder forHtml method
 
 ## Building/Running locally
 You need maven to build the project locally. Download/clone the repository to your local disk.
