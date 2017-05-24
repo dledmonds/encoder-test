@@ -1,0 +1,58 @@
+{
+  "tests" : [ {
+    "name" : "Apache StringEscapeUtils escapeHtml3 All Versions Test",
+    "outputType" : "HTML_ENCODED_DIFF",
+    "dataFile" : "basic-html-encoding.txt",
+    "encoders" : [ {
+      "id" : "escapeHtml3-3.5",
+      "library" : "org.apache.commons:commons-lang3:3.5",
+      "className" : "org.apache.commons.lang3.StringEscapeUtils",
+      "methodName" : "escapeHtml3"
+    }, {
+      "id" : "escapeHtml3-3.4",
+      "library" : "org.apache.commons:commons-lang3:3.4",
+      "className" : "org.apache.commons.lang3.StringEscapeUtils",
+      "methodName" : "escapeHtml3"
+    }, {
+      "id" : "escapeHtml3-3.3.2",
+      "library" : "org.apache.commons:commons-lang3:3.3.2",
+      "className" : "org.apache.commons.lang3.StringEscapeUtils",
+      "methodName" : "escapeHtml3"
+    }, {
+      "id" : "escapeHtml3-3.3.1",
+      "library" : "org.apache.commons:commons-lang3:3.3.1",
+      "className" : "org.apache.commons.lang3.StringEscapeUtils",
+      "methodName" : "escapeHtml3"
+    }, {
+      "id" : "escapeHtml3-3.3",
+      "library" : "org.apache.commons:commons-lang3:3.3",
+      "className" : "org.apache.commons.lang3.StringEscapeUtils",
+      "methodName" : "escapeHtml3"
+    }, {
+      "id" : "escapeHtml3-3.2.1",
+      "library" : "org.apache.commons:commons-lang3:3.2.1",
+      "className" : "org.apache.commons.lang3.StringEscapeUtils",
+      "methodName" : "escapeHtml3"
+    }, {
+      "id" : "escapeHtml3-3.2",
+      "library" : "org.apache.commons:commons-lang3:3.2",
+      "className" : "org.apache.commons.lang3.StringEscapeUtils",
+      "methodName" : "escapeHtml3"
+    }, {
+      "id" : "escapeHtml3-3.1",
+      "library" : "org.apache.commons:commons-lang3:3.1",
+      "className" : "org.apache.commons.lang3.StringEscapeUtils",
+      "methodName" : "escapeHtml3"
+    }, {
+      "id" : "escapeHtml3-3.0.1",
+      "library" : "org.apache.commons:commons-lang3:3.0.1",
+      "className" : "org.apache.commons.lang3.StringEscapeUtils",
+      "methodName" : "escapeHtml3"
+    }, {
+      "id" : "escapeHtml3-3.0",
+      "library" : "org.apache.commons:commons-lang3:3.0",
+      "className" : "org.apache.commons.lang3.StringEscapeUtils",
+      "methodName" : "escapeHtml3"
+    } ]
+  } ]
+}

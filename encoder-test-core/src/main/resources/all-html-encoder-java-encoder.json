@@ -1,0 +1,80 @@
+{
+  "tests" : [ {
+    "name" : "OWASP Java-Encoder forHtml All Versions Test",
+    "outputType" : "HTML_ENCODED_DIFF",
+    "dataFile" : "basic-html-encoding.txt",
+    "encoders" : [ {
+      "id" : "forHtml-1.2.1",
+      "library" : "org.owasp.encoder:encoder:1.2.1",
+      "className" : "org.owasp.encoder.Encode",
+      "methodName" : "forHtml"
+    }, {
+      "id" : "forHtml-1.2",
+      "library" : "org.owasp.encoder:encoder:1.2",
+      "className" : "org.owasp.encoder.Encode",
+      "methodName" : "forHtml"
+    }, {
+      "id" : "forHtml-1.1.1",
+      "library" : "org.owasp.encoder:encoder:1.1.1",
+      "className" : "org.owasp.encoder.Encode",
+      "methodName" : "forHtml"
+    }, {
+      "id" : "forHtml-1.1",
+      "library" : "org.owasp.encoder:encoder:1.1",
+      "className" : "org.owasp.encoder.Encode",
+      "methodName" : "forHtml"
+    } ]
+  },
+  {
+    "name" : "OWASP Java-Encoder forHtmlAttribute All Versions Test",
+    "outputType" : "HTML_ENCODED_DIFF",
+    "dataFile" : "basic-html-encoding.txt",
+    "encoders" : [ {
+      "id" : "forHtmlAttribute-1.2.1",
+      "library" : "org.owasp.encoder:encoder:1.2.1",
+      "className" : "org.owasp.encoder.Encode",
+      "methodName" : "forHtmlAttribute"
+    }, {
+      "id" : "forHtmlAttribute-1.2",
+      "library" : "org.owasp.encoder:encoder:1.2",
+      "className" : "org.owasp.encoder.Encode",
+      "methodName" : "forHtmlAttribute"
+    }, {
+      "id" : "forHtmlAttribute-1.1.1",
+      "library" : "org.owasp.encoder:encoder:1.1.1",
+      "className" : "org.owasp.encoder.Encode",
+      "methodName" : "forHtmlAttribute"
+    }, {
+      "id" : "forHtmlAttribute-1.1",
+      "library" : "org.owasp.encoder:encoder:1.1",
+      "className" : "org.owasp.encoder.Encode",
+      "methodName" : "forHtmlAttribute"
+    } ]
+  },
+  {
+    "name" : "OWASP Java-Encoder forHtmlContent All Versions Test",
+    "outputType" : "HTML_ENCODED_DIFF",
+    "dataFile" : "basic-html-encoding.txt",
+    "encoders" : [ {
+      "id" : "forHtmlContent-1.2.1",
+      "library" : "org.owasp.encoder:encoder:1.2.1",
+      "className" : "org.owasp.encoder.Encode",
+      "methodName" : "forHtmlContent"
+    }, {
+      "id" : "forHtmlContent-1.2",
+      "library" : "org.owasp.encoder:encoder:1.2",
+      "className" : "org.owasp.encoder.Encode",
+      "methodName" : "forHtmlContent"
+    }, {
+      "id" : "forHtmlContent-1.1.1",
+      "library" : "org.owasp.encoder:encoder:1.1.1",
+      "className" : "org.owasp.encoder.Encode",
+      "methodName" : "forHtmlContent"
+    }, {
+      "id" : "forHtmlContent-1.1",
+      "library" : "org.owasp.encoder:encoder:1.1",
+      "className" : "org.owasp.encoder.Encode",
+      "methodName" : "forHtmlContent"
+    } ]
+  } ]
+}

@@ -1,0 +1,48 @@
+{
+  "tests" : [ {
+    "name" : "All HTML Encoder Test",
+    "outputType" : "HTML_BASELINE_DIFF",
+    "dataFile" : "basic-html-encoding.txt",
+    "encoders" : [ {
+      "id" : "forHtml",
+      "library" : "org.owasp.encoder:encoder:1.2.1",
+      "className" : "org.owasp.encoder.Encode",
+      "methodName" : "forHtml"
+    }, {
+      "id" : "forHtmlContent",
+      "library" : "org.owasp.encoder:encoder:1.2.1",
+      "className" : "org.owasp.encoder.Encode",
+      "methodName" : "forHtmlContent"
+    }, {
+      "id" : "forHtmlAttribute",
+      "library" : "org.owasp.encoder:encoder:1.2.1",
+      "className" : "org.owasp.encoder.Encode",
+      "methodName" : "forHtmlAttribute"
+    }, {
+      "id" : "escapeHtml3",
+      "library" : "org.apache.commons:commons-lang3:3.5",
+      "className" : "org.apache.commons.lang3.StringEscapeUtils",
+      "methodName" : "escapeHtml3"
+    }, {
+      "id" : "escapeHtml4",
+      "library" : "org.apache.commons:commons-lang3:3.5",
+      "className" : "org.apache.commons.lang3.StringEscapeUtils",
+      "methodName" : "escapeHtml4"
+    }, {
+      "id" : "escapeHtml",
+      "library" : "commons-lang:commons-lang:2.6",
+      "className" : "org.apache.commons.lang.StringEscapeUtils",
+      "methodName" : "escapeHtml"
+    }, {
+      "id" : "encodeForHTML",
+      "library" : "org.owasp.esapi:esapi:2.1.0.1,log4j:log4j:1.2.17,com.dledmonds:encoder-test-wrapper:1.0-SNAPSHOT",
+      "className" : "com.dledmonds.encodingtest.wrapper.EsapiLegacyWrapper",
+      "methodName" : "encodeForHTML"
+    }, {
+      "id" : "encodeForHTMLAttribute",
+      "library" : "org.owasp.esapi:esapi:2.1.0.1,log4j:log4j:1.2.17,com.dledmonds:encoder-test-wrapper:1.0-SNAPSHOT",
+      "className" : "com.dledmonds.encodingtest.wrapper.EsapiLegacyWrapper",
+      "methodName" : "encodeForHTMLAttribute"
+    } ]
+  } ]
+}

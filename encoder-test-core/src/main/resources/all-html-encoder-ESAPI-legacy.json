@@ -1,0 +1,28 @@
+{
+  "tests" : [ {
+    "name" : "OWASP ESAPI legacy encodeForHTML All Versions Test",
+    "outputType" : "HTML_ENCODED_DIFF",
+    "dataFile" : "basic-html-encoding.txt",
+    "encoders" : [ {
+      "id" : "encodeForHTML-2.1.0.1",
+      "library" : "org.owasp.esapi:esapi:2.1.0.1,log4j:log4j:1.2.17,com.dledmonds:encoder-test-wrapper:1.0-SNAPSHOT",
+      "className" : "com.dledmonds.encodingtest.wrapper.EsapiLegacyWrapper",
+      "methodName" : "encodeForHTML"
+    }, {
+      "id" : "encodeForHTML-2.1.0",
+      "library" : "org.owasp.esapi:esapi:2.1.0,log4j:log4j:1.2.16,com.dledmonds:encoder-test-wrapper:1.0-SNAPSHOT",
+      "className" : "com.dledmonds.encodingtest.wrapper.EsapiLegacyWrapper",
+      "methodName" : "encodeForHTML"
+    }, {
+      "id" : "encodeForHTML-2.0.1",
+      "library" : "org.owasp.esapi:esapi:2.0.1,log4j:log4j:1.2.16,com.dledmonds:encoder-test-wrapper:1.0-SNAPSHOT",
+      "className" : "com.dledmonds.encodingtest.wrapper.EsapiLegacyWrapper",
+      "methodName" : "encodeForHTML"
+    }, {
+      "id" : "encodeForHTML-2.0GA",
+      "library" : "org.owasp.esapi:esapi:2.0GA,log4j:log4j:1.2.16,com.dledmonds:encoder-test-wrapper:1.0-SNAPSHOT",
+      "className" : "com.dledmonds.encodingtest.wrapper.EsapiLegacyWrapper",
+      "methodName" : "encodeForHTML"
+    } ]
+  } ]
+}
