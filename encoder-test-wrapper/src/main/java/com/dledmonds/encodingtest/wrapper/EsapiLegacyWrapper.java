@@ -32,4 +32,12 @@ public class EsapiLegacyWrapper {
 		return getInstance().encoder.encodeForHTMLAttribute(data);
 	}
 
+	public static String encodeForJavaScript(String data) {
+		return getInstance().encoder.encodeForJavaScript(data);
+	}
+	
+	public static String encodeForCSS(String data) {
+		return getInstance().encoder.encodeForCSS(data);
+	}
+	
 }

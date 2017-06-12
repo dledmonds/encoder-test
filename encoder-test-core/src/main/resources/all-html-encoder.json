@@ -1,6 +1,7 @@
 {
   "tests" : [ {
     "name" : "All HTML Encoder Test",
+    "description" : "Comparison of various HTML encoders, including context sensitive encoding where available. OWASP java-encoder, Apache StringUtils, ESAPI legacy",
     "outputType" : "HTML_BASELINE_DIFF",
     "dataFile" : "basic-html-encoding.txt",
     "encoders" : [ {
@@ -18,6 +19,11 @@
       "library" : "org.owasp.encoder:encoder:1.2.1",
       "className" : "org.owasp.encoder.Encode",
       "methodName" : "forHtmlAttribute"
+    }, {
+      "id" : "forHtmlUnquotedAttribute",
+      "library" : "org.owasp.encoder:encoder:1.2.1",
+      "className" : "org.owasp.encoder.Encode",
+      "methodName" : "forHtmlUnquotedAttribute"
     }, {
       "id" : "escapeHtml3",
       "library" : "org.apache.commons:commons-lang3:3.5",

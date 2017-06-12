@@ -1,0 +1,34 @@
+{
+  "tests" : [ {
+    "name" : "All Javascript Encoder Test",
+    "description" : "Comparison of Javascript encoders. OWASP java-encoder, ESAPI legacy",
+    "outputType" : "HTML_BASELINE_DIFF",
+    "dataFile" : "basic-javascript-encoding.txt",
+    "encoders" : [ {
+      "id" : "forJavaScript",
+      "library" : "org.owasp.encoder:encoder:1.2.1",
+      "className" : "org.owasp.encoder.Encode",
+      "methodName" : "forJavaScript"
+    }, {
+      "id" : "forJavaScriptAttribute",
+      "library" : "org.owasp.encoder:encoder:1.2.1",
+      "className" : "org.owasp.encoder.Encode",
+      "methodName" : "forJavaScriptAttribute"
+    }, {
+      "id" : "forJavaScriptBlock",
+      "library" : "org.owasp.encoder:encoder:1.2.1",
+      "className" : "org.owasp.encoder.Encode",
+      "methodName" : "forJavaScriptBlock"
+    }, {
+      "id" : "forJavaScriptSource",
+      "library" : "org.owasp.encoder:encoder:1.2.1",
+      "className" : "org.owasp.encoder.Encode",
+      "methodName" : "forJavaScriptSource"
+    }, {
+      "id" : "encodeForJavaScript",
+      "library" : "org.owasp.esapi:esapi:2.1.0.1,log4j:log4j:1.2.17,com.dledmonds:encoder-test-wrapper:1.0-SNAPSHOT",
+      "className" : "com.dledmonds.encodingtest.wrapper.EsapiLegacyWrapper",
+      "methodName" : "encodeForJavaScript"
+    } ]
+  } ]
+}

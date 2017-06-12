@@ -7,7 +7,7 @@ public interface HtmlWriter {
 
 	public void startHead(String title) throws IOException;
 
-	public void startBody(String title) throws IOException;
+	public void startBody(String title, String description) throws IOException;
 
 	public void startTable() throws IOException;
 

@@ -8,6 +8,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
+import com.dledmonds.encodertest.utils.CharacterUtils;
+
 /**
  * HtmlWriter implementation that highlights table data that occurs least
  * frequently for a given row.
@@ -67,13 +69,13 @@ public class HighlightLowestFrequencyHtmlWriter extends DefaultHtmlWriter {
 	}
 
 	public void addTableRowData(String data) throws IOException {
-		this.tableRowData.add(data); // save up data for comparison, output on
-										// endRow
+		// save up data for comparison, output on endRow
+		this.tableRowData.add(data);
 	}
 
 	public void addTableRowBaselineData(String data) throws IOException {
 		writer.write("<td>");
-		writer.write(encoder.encode(data));
+		writer.write(encoder.encode(CharacterUtils.toPrintableString(data)));
 		writer.write("</td>");
 	}
 

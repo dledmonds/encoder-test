@@ -20,6 +20,7 @@ import com.dledmonds.encodertest.output.DefaultHtmlWriter;
 import com.dledmonds.encodertest.output.HighlightBaselineDifferenceHtmlWriter;
 import com.dledmonds.encodertest.output.HighlightLowestFrequencyHtmlWriter;
 import com.dledmonds.encodertest.output.HtmlWriter;
+import com.dledmonds.encodertest.utils.CharacterUtils;
 import com.dledmonds.encodertest.utils.ClassLoaderFactory;
 import com.dledmonds.encodertest.utils.FileUtils;
 
@@ -82,7 +83,8 @@ public class ConfigRunner {
 	private void saveTest(ConfigTest test, HtmlWriter writer) throws Exception {
 		writer.startHtml();
 		writer.startHead(test.getName());
-		writer.startBody(test.getName());
+		writer.startBody(test.getName(), test.getDescription() == null ? ""
+				: test.getDescription());
 		writer.startTable();
 
 		writer.startTableRow();
@@ -96,16 +98,21 @@ public class ConfigRunner {
 		while (dataEnum.hasMoreElements()) {
 			String testData = dataEnum.nextElement();
 			writer.startTableRow();
-			writer.addTableRowBaselineData(testData);
+			writer.addTableRowBaselineData(CharacterUtils
+					.toNonPrintableString(testData));
 
 			for (ConfigEncoder encoder : test.getEncoders()) {
 				Method method = getEncoderMethod(encoder);
-				writer.addTableRowData((String) method.invoke(null, testData));
+				writer.addTableRowData((String) method.invoke(null,
+						CharacterUtils.toNonPrintableString(testData)));
 			}
 
 			writer.endTableRow();
 		}
 		writer.endTable();
+
+		// TODO: add key from CharacterUtils using description constants
+
 		writer.endBody();
 		writer.endHtml();
 	}
@@ -120,7 +127,6 @@ public class ConfigRunner {
 		if (method == null) {
 			ClassLoader cl = getClassLoader(encoder.getLibrary());
 			Class clazz = cl.loadClass(encoder.getClassName());
-			System.out.println("Found class : " + clazz.getClassLoader());
 			method = clazz.getMethod(encoder.getMethodName(), String.class);
 			this.cachedMethods.put(id, method);
 		}
@@ -135,16 +141,16 @@ public class ConfigRunner {
 		StringTokenizer tokenizer = new StringTokenizer(libsString, ",");
 		while (tokenizer.hasMoreElements()) {
 			String libName = tokenizer.nextToken().trim();
-			System.out.println("Looking for " + libName);
+			// System.out.println("Looking for " + libName);
 			File jarFile = findOrDownloadLibrary(libName);
 			if (jarFile != null) {
-				System.out.println("Found " + jarFile.getAbsolutePath());
+				// System.out.println("Found " + jarFile.getAbsolutePath());
 				if (sb.length() > 0)
 					sb.append(",");
 				sb.append(jarFile.getAbsolutePath());
 			}
 		}
-		System.out.println("Passing to classloader : " + sb.toString());
+		// System.out.println("Passing to classloader : " + sb.toString());
 
 		return ClassLoaderFactory.createClassLoader(sb.toString(),
 				ConfigRunner.class.getClassLoader());

@@ -3,6 +3,8 @@ package com.dledmonds.encodertest.output;
 import java.io.IOException;
 import java.io.Writer;
 
+import com.dledmonds.encodertest.utils.CharacterUtils;
+
 /**
  * HtmlWriter implementation that highlights table data that is different to a
  * set baseline. The baseline will be set to the original unencoded data by
@@ -36,7 +38,7 @@ public class HighlightBaselineDifferenceHtmlWriter extends DefaultHtmlWriter {
 		} else {
 			writer.write("<td>");
 		}
-		writer.write(encoder.encode(data));
+		writer.write(encoder.encode(CharacterUtils.toPrintableString(data)));
 		writer.write("</td>");
 	}
 

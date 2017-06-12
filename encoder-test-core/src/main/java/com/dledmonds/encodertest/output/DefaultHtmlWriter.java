@@ -5,6 +5,8 @@ import java.io.Writer;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import com.dledmonds.encodertest.utils.CharacterUtils;
+
 public class DefaultHtmlWriter implements HtmlWriter {
 	protected static final SimpleDateFormat DATE_FORMAT = new SimpleDateFormat(
 			"YYYY/MM/dd-HH:mm:ss");
@@ -51,12 +53,15 @@ public class DefaultHtmlWriter implements HtmlWriter {
 		writer.write("</style>");
 	}
 
-	public void startBody(String title) throws IOException {
+	public void startBody(String title, String description) throws IOException {
 		writer.write("<body>");
 		writer.write("<div class=\"container\">");
 		writer.write("<h1>");
 		writer.write(encoder.encode(title));
 		writer.write("</h1>");
+		writer.write("<p>");
+		writer.write(encoder.encode(description));
+		writer.write("</p>");
 		writer.write("<p>Hover over column header for more information</p>");
 	}
 
@@ -85,7 +90,7 @@ public class DefaultHtmlWriter implements HtmlWriter {
 
 	public void addTableRowHeader(String data, String description)
 			throws IOException {
-		writer.write("<th>");
+		writer.write("<th class=\"text-center\">");
 		if (description != null)
 			writer.write("<span title=\"" + encoder.encode(description) + "\">");
 		writer.write(encoder.encode(data));
@@ -99,8 +104,9 @@ public class DefaultHtmlWriter implements HtmlWriter {
 	}
 
 	public void addTableRowData(String data, boolean encode) throws IOException {
+		String printableData = CharacterUtils.toPrintableString(data);
 		writer.write("<td>");
-		writer.write(encode ? encoder.encode(data) : data);
+		writer.write(encode ? encoder.encode(printableData) : printableData);
 		writer.write("</td>");
 	}
 
