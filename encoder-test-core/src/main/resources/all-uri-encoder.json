@@ -1,0 +1,24 @@
+{
+  "tests" : [ {
+    "name" : "All URL Encoder Test",
+    "description" : "Comparison of URL encoders. OWASP java-encoder, ESAPI legacy, Java URLEncoder (UTF-8 encoding only)",
+    "outputType" : "HTML_BASELINE_DIFF",
+    "dataFile" : "basic-uri-encoding.txt",
+    "encoders" : [ {
+      "id" : "forUriComponent",
+      "library" : "org.owasp.encoder:encoder:1.2.1",
+      "className" : "org.owasp.encoder.Encode",
+      "methodName" : "forUriComponent"
+    }, {
+      "id" : "encodeForURL",
+      "library" : "org.owasp.esapi:esapi:2.1.0.1,log4j:log4j:1.2.17,com.dledmonds:encoder-test-wrapper:1.0-SNAPSHOT",
+      "className" : "com.dledmonds.encodingtest.wrapper.EsapiLegacyWrapper",
+      "methodName" : "encodeForURL"
+    }, {
+      "id" : "URLEncoder.encode",
+      "library" : "com.dledmonds:encoder-test-wrapper:1.0-SNAPSHOT",
+      "className" : "com.dledmonds.encodingtest.wrapper.JdkWrapper",
+      "methodName" : "urlEncode"
+    } ]
+  } ]
+}

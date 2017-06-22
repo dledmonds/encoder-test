@@ -1,6 +1,7 @@
 package com.dledmonds.encodingtest.wrapper;
 
 import org.owasp.esapi.ESAPI;
+import org.owasp.esapi.errors.EncodingException;
 
 /**
  * Singleton wrapper to provide static method calls into ESAPI encoding
@@ -38,6 +39,10 @@ public class EsapiLegacyWrapper {
 	
 	public static String encodeForCSS(String data) {
 		return getInstance().encoder.encodeForCSS(data);
+	}
+	
+	public static String encodeForURL(String data) throws EncodingException {
+		return getInstance().encoder.encodeForURL(data);
 	}
 	
 }
