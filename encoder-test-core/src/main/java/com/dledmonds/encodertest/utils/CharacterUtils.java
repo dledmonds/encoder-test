@@ -28,6 +28,8 @@ public class CharacterUtils {
 	 * version with substitutions
 	 */
 	public static String toPrintableString(String text) {
+		if (!containsNotPrintableCharacters(text)) return text;
+		
 		StringBuilder sb = new StringBuilder();
 		char c = 0;
 		boolean foundMatch = false;
