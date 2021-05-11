@@ -1,5 +1,6 @@
 .DS_Store
 *.iml
+output/*.json
 encoder-test-java/target/
 encoder-test-java/.classpath
 encoder-test-java/.project
