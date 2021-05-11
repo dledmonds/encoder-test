@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.dledmonds</groupId>
+    <artifactId>encoder-test-parent</artifactId>
+    <packaging>pom</packaging>
+    <version>1-SNAPSHOT</version>
+
+    <properties>
+        <commons.cli.version>1.4</commons.cli.version>
+        <jackson.version>2.12.3</jackson.version>
+        <lombok.version>1.18.20</lombok.version>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <modules>
+        <module>encoder-test-java-wrapper-esapi-1-resources</module>
+        <module>encoder-test-java-wrapper-esapi-2-resources</module>
+        <module>encoder-test-java-wrapper</module>
+        <module>encoder-test-utils</module>
+        <module>encoder-test-java</module>
+        <module>encoder-test-transform</module>
+    </modules>
+</project>
