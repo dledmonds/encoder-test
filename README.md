@@ -11,8 +11,13 @@ If you just want to jump to the interesting bit, here's what's in the `output` d
 * [All_Java_Encoder_Test.html](http://htmlpreview.github.io/?https://github.com/dledmonds/encoder-test/blob/master/output/All_Java_Encoder_Test.html) - compares Java String encoders side by side
 
 ## Building/Running locally
-You need maven to build the project locally. Download/clone the repository to your local disk.
 
+First generate the .NET data:
+* `docker run --rm -it -v "$(pwd):/app" --workdir /app/dotnet mcr.microsoft.com/dotnet/sdk:6.0`
+* `dotnet run`
+
+Then generate the Java data and product the reports:
+* `docker run --rm -it -v "$(pwd):/app" --entrypoint bash --workdir /app maven`
 * `mvn clean install`
 * `java -jar encoder-test-java/target/encoder-test-java-1-SNAPSHOT-jar-with-dependencies.jar`
 * `java -jar encoder-test-transform/target/encoder-test-transform-1-SNAPSHOT-jar-with-dependencies.jar`
