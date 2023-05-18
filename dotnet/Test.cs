@@ -8,11 +8,13 @@ public class Test {
     private string inputFilePath;
     public string className;
     public string methodName;
+    public string encoderType;
 
-    public Test(string inputFilePath, string className, string methodName) {
+    public Test(string inputFilePath, string className, string methodName, string encoderType) {
         this.inputFilePath = inputFilePath;
         this.className = className;
         this.methodName = methodName;
+        this.encoderType = encoderType;
     }
 
     public dynamic Run() {
@@ -48,7 +50,7 @@ public class Test {
             name = $"{this.className}.{this.methodName}",
             description = this.className,
             dataFile = Path.GetFileName(this.inputFilePath),
-            tags = new string[] { "dotnet-encoder", "113", "117", this.className },
+            tags = new string[] { "dotnet", this.encoderType, "113", "117", this.className },
             encoder = new {
                 library = this.className,
                 className = this.className,

@@ -10,9 +10,9 @@ var jsonOptions = new JsonSerializerOptions {
 };
 
 var tests = new List<Test> {
-    new Test(inputFilePath, "System.Security.SecurityElement", "Escape"),
-    new Test(inputFilePath, "System.Net.WebUtility", "HtmlEncode"),
-    new Test(inputFilePath, "System.Net.WebUtility", "UrlEncode"),
+    new Test(inputFilePath, "System.Security.SecurityElement", "Escape", "xml-encoder"),
+    new Test(inputFilePath, "System.Net.WebUtility", "HtmlEncode", "html-encoder"),
+    new Test(inputFilePath, "System.Net.WebUtility", "UrlEncode", "url-encoder"),
 
     // AntiXSS is .NET standard
 

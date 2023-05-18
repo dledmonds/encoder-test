@@ -9,11 +9,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.FilenameFilter;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
@@ -62,6 +58,7 @@ public class TransformRunner {
     }
 
     void transformEncoders(List<TestResult> results) throws Exception {
+        // all languages
         transformEncodersByTag(results, "html-encoder", "All_HTML_Encoder_Test.html",
                 "All HTML Encoders", "Comparison of most popular HTML encoders");
 
@@ -77,17 +74,42 @@ public class TransformRunner {
         transformEncodersByTag(results, "uri-encoder", "All_URL_Encoder_Test.html",
                 "All URL Encoders", "Comparison of most popular URL encoders");
 
-        transformEncodersByTag(results, "java-encoder", "All_Java_Encoder_Test.html",
+        // java only
+        transformEncodersByTag(results, "java", "All_Java_Encoder_Test.html",
+                "All Java Encoders", "Comparison of most popular Java encoders");
+
+        transformEncodersByTag(results, "java-encoder", "All_Java_String_Encoder_Test.html",
                 "All Java String Encoders", "Comparison of most popular Java String encoders");
 
-        transformEncodersByTag(results, "dotnet-encoder", "All_.NET_Encoder_Test.html",
-                "All .NET String Encoders", "Comparison of most popular .NET String encoders");
+        transformEncodersByTags(results, Arrays.asList("java", "html-encoder"), "All_Java_HTML_Encoder_Test.html",
+                "All Java HTML Encoders", "Comparison of most popular Java HTML encoders");
+
+        transformEncodersByTags(results, Arrays.asList("java", "xml-encoder"), "All_Java_XML_Encoder_Test.html",
+                "All Java XML Encoders", "Comparison of most popular Java XML encoders");
+
+        transformEncodersByTags(results, Arrays.asList("java", "css-encoder"), "All_Java_CSS_Encoder_Test.html",
+                "All Java CSS Encoders", "Comparison of most popular Java CSS encoders");
+
+        transformEncodersByTags(results, Arrays.asList("java", "javascript-encoder"), "All_Java_Javascript_Encoder_Test.html",
+                "All Java Javascript Encoders", "Comparison of most popular Java Javascript encoders");
+
+        transformEncodersByTags(results, Arrays.asList("java", "uri-encoder"), "All_Java_URL_Encoder_Test.html",
+                "All Java URL Encoders", "Comparison of most popular Java URL encoders");
+
+
+        // dotnet only
+        transformEncodersByTag(results, "dotnet", "All_dotNET_Encoder_Test.html",
+                "All .NET Encoders", "Comparison of most popular .NET encoders");
     }
 
     void transformEncodersByTag(List<TestResult> results, String tag, String fileName, String title, String description) throws Exception {
+        transformEncodersByTags(results, Arrays.asList(tag), fileName, title, description);
+    }
+
+    void transformEncodersByTags(List<TestResult> results, List<String> tags, String fileName, String title, String description) throws Exception {
         Map<String, TestResult> filteredEncoders = new HashMap<>();
         for (TestResult result : results) {
-            if (result.getTags().contains(tag)) {
+            if (result.getTags().containsAll(tags)) {
                 String key = result.getEncoder().getClassName() + "." + result.getEncoder().getMethodName();
                 TestResult tmp = filteredEncoders.get(key);
                 if (tmp != null) {
@@ -123,13 +145,15 @@ public class TransformRunner {
             writer.endTableRow();
 
             // table body
-            for (String key : results.get(0).getResults().keySet()) {
-                writer.startTableRow();
-                writer.addTableRowBaselineData(CharacterUtils.toNonPrintableString(key));
-                for (TestResult result : results) {
-                    writer.addTableRowData(CharacterUtils.toNonPrintableString(result.getResults().get(key)));
+            if (!results.isEmpty()) {
+                for (String key : results.get(0).getResults().keySet()) {
+                    writer.startTableRow();
+                    writer.addTableRowBaselineData(CharacterUtils.toNonPrintableString(key));
+                    for (TestResult result : results) {
+                        writer.addTableRowData(CharacterUtils.toNonPrintableString(result.getResults().get(key)));
+                    }
+                    writer.endTableRow();
                 }
-                writer.endTableRow();
             }
 
             writer.endTable();
