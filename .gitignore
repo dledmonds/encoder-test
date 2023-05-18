@@ -1,11 +1,9 @@
 .DS_Store
 *.iml
 output/*.json
-encoder-test-java/target/
-encoder-test-java/.classpath
-encoder-test-java/.project
-encoder-test-java/.settings
-encoder-test-java-wrapper/target/
-encoder-test-java-wrapper/.classpath
-encoder-test-java-wrapper/.project
-encoder-test-java-wrapper/.settings
+target
+.classpath
+.project
+.settings
+dotnet/bin
+dotnet/obj

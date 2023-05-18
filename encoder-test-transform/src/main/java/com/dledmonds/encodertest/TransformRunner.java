@@ -79,6 +79,9 @@ public class TransformRunner {
 
         transformEncodersByTag(results, "java-encoder", "All_Java_Encoder_Test.html",
                 "All Java String Encoders", "Comparison of most popular Java String encoders");
+
+        transformEncodersByTag(results, "dotnet-encoder", "All_.NET_Encoder_Test.html",
+                "All .NET String Encoders", "Comparison of most popular .NET String encoders");
     }
 
     void transformEncodersByTag(List<TestResult> results, String tag, String fileName, String title, String description) throws Exception {
