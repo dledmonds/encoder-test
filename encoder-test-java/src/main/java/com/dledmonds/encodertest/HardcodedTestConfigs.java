@@ -84,8 +84,12 @@ public class HardcodedTestConfigs {
     public List<TestConfig> getOwaspESAPIConfigs() {
         List<TestConfig> configs = new ArrayList<>();
 
+        // the difference is the required configuration file
+        String[] esapiLegacyVersions_v1 = new String[]{"2.2.1.0", "2.1.0.1", "2.0.1"};
+        String[] esapiLegacyVersions_v2 = new String[]{"2.5.2.0", "2.4.0.0", "2.3.0.0", "2.2.3.1"};
+
         // older releases
-        for (String version : new String[]{"2.2.0.0", "2.1.0.1", "2.1.0", "2.0.1"}) {
+        for (String version : esapiLegacyVersions_v1) {
             for (String methodName : new String[]{"encodeForHTML", "encodeForHTMLAttribute"}) {
                 TestConfig tc = createTestConfig(
                         "owasp-esapi-legacy-" + version + "-" + methodName,
@@ -98,7 +102,7 @@ public class HardcodedTestConfigs {
                 configs.add(tc);
             }
         }
-        for (String version : new String[]{"2.2.0.0", "2.1.0.1", "2.1.0", "2.0.1"}) {
+        for (String version : esapiLegacyVersions_v1) {
             for (String methodName : new String[]{"encodeForJavaScript"}) {
                 TestConfig tc = createTestConfig(
                         "owasp-esapi-legacy-" + version + "-" + methodName,
@@ -111,7 +115,7 @@ public class HardcodedTestConfigs {
                 configs.add(tc);
             }
         }
-        for (String version : new String[]{"2.2.0.0", "2.1.0.1", "2.1.0", "2.0.1"}) {
+        for (String version : esapiLegacyVersions_v1) {
             for (String methodName : new String[]{"encodeForURL"}) {
                 TestConfig tc = createTestConfig(
                         "owasp-esapi-legacy-" + version + "-" + methodName,
@@ -124,7 +128,7 @@ public class HardcodedTestConfigs {
                 configs.add(tc);
             }
         }
-        for (String version : new String[]{"2.2.0.0", "2.1.0.1", "2.1.0", "2.0.1"}) {
+        for (String version : esapiLegacyVersions_v1) {
             for (String methodName : new String[]{"encodeForXML", "encodeForXMLAttribute"}) {
                 TestConfig tc = createTestConfig(
                         "owasp-esapi-legacy-" + version + "-" + methodName,
@@ -138,8 +142,9 @@ public class HardcodedTestConfigs {
             }
         }
 
+
         // newer releases
-        for (String version : new String[]{"2.2.3.1", "2.2.3.0", "2.2.2.0", "2.2.1.1", "2.2.1.0"}) {
+        for (String version : esapiLegacyVersions_v2) {
             for (String methodName : new String[]{"encodeForHTML", "encodeForHTMLAttribute"}) {
                 TestConfig tc = createTestConfig(
                         "owasp-esapi-legacy-" + version + "-" + methodName,
@@ -152,7 +157,7 @@ public class HardcodedTestConfigs {
                 configs.add(tc);
             }
         }
-        for (String version : new String[]{"2.2.3.1", "2.2.3.0", "2.2.2.0", "2.2.1.1", "2.2.1.0"}) {
+        for (String version : esapiLegacyVersions_v2) {
             for (String methodName : new String[]{"encodeForJavaScript"}) {
                 TestConfig tc = createTestConfig(
                         "owasp-esapi-legacy-" + version + "-" + methodName,
@@ -165,7 +170,7 @@ public class HardcodedTestConfigs {
                 configs.add(tc);
             }
         }
-        for (String version : new String[]{"2.2.3.1", "2.2.3.0", "2.2.2.0", "2.2.1.1", "2.2.1.0"}) {
+        for (String version : esapiLegacyVersions_v2) {
             for (String methodName : new String[]{"encodeForURL"}) {
                 TestConfig tc = createTestConfig(
                         "owasp-esapi-legacy-" + version + "-" + methodName,
@@ -178,7 +183,7 @@ public class HardcodedTestConfigs {
                 configs.add(tc);
             }
         }
-        for (String version : new String[]{"2.2.3.1", "2.2.3.0", "2.2.2.0", "2.2.1.1", "2.2.1.0"}) {
+        for (String version : esapiLegacyVersions_v2) {
             for (String methodName : new String[]{"encodeForXML", "encodeForXMLAttribute"}) {
                 TestConfig tc = createTestConfig(
                         "owasp-esapi-legacy-" + version + "-" + methodName,
