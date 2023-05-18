@@ -100,6 +100,12 @@ public class TransformRunner {
         // dotnet only
         transformEncodersByTag(results, "dotnet", "All_dotNET_Encoder_Test.html",
                 "All .NET Encoders", "Comparison of most popular .NET encoders");
+
+        transformEncodersByTags(results, Arrays.asList("dotnet", "html-encoder"), "All_dotNET_HTML_Encoder_Test.html",
+                "All .NET HTML Encoders", "Comparison of most popular .NET HTML encoders");
+
+        transformEncodersByTags(results, Arrays.asList("dotnet", "uri-encoder"), "All_dotNET_URL_Encoder_Test.html",
+                "All .NET URL Encoders", "Comparison of most popular .NET URL encoders");
     }
 
     void transformEncodersByTag(List<TestResult> results, String tag, String fileName, String title, String description) throws Exception {

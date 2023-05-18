@@ -43,8 +43,8 @@ public class Test {
         return new {
             generatedDate = DateTimeOffset.Now.ToUnixTimeMilliseconds(),
             properties = new {
-                javaDOTversion = "dotnet 6.0.400",
-                osDOTname = "Linux"
+                javaDOTversion = System.Runtime.InteropServices.RuntimeInformation.FrameworkDescription,
+                osDOTname = System.Runtime.InteropServices.RuntimeInformation.RuntimeIdentifier
             },
             results = results,
             name = $"{this.className}.{this.methodName}",
